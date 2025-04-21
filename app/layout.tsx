@@ -13,8 +13,13 @@ const lora = Lora({
   variable: "--font-lora"
 });
 
+export const metadata = {
+  title: 'CineMatch',
+  description: 'Movie matching application',
+}
+
 export default function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
@@ -23,6 +28,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cx(inter.variable, lora.variable)}>
+      <head />
       <body className="antialiased text-gray-800 dark:bg-black dark:text-gray-400">
         <Providers>{children}</Providers>
       </body>
